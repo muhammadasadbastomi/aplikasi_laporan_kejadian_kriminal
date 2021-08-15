@@ -22,6 +22,7 @@
     <link href="{{asset('assets/node_modules/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}"
         rel="stylesheet">
     <link href="{{asset('assets/node_modules/css-chart/css-chart.css')}}" rel="stylesheet">
+    @yield('css')
     <!-- page css -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
