@@ -425,6 +425,16 @@
                         </ul>
                     </li>
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
+                                class="ti-menu"></i><span class="hide-menu">Laporan
+                                Kejadian</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{route('admin.kegiatan.index')}}">Kegiatan</a></li>
+                            <li><a href="{{route('admin.konflik.index')}}">Konflik</a></li>
+                            <li><a href="{{route('admin.gangguan.index')}}">Gangguan</a></li>
+                            <li><a href="{{route('admin.kriminal.index')}}">Kriminal</a></li>
+                        </ul>
+                    </li>
+                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
                                 class="ti-bar-chart"></i><span class="hide-menu">Cetak Laporan
                             </span></a>
                         <ul aria-expanded="false" class="collapse">
