@@ -330,4 +330,14 @@ class ReportController extends Controller
 
         return $pdf->stream('Laporan Kriminal Bulanan.pdf');
     }
+
+    public function grafik()
+    {
+        $now = $this->now;
+        $pdf = PDF::loadView('admin.report.grafik', ['data' => $data, 'now' => $now]);
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Grafik Kejadian.pdf');
+
+    }
 }
