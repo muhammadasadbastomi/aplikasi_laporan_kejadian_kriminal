@@ -111,21 +111,18 @@
     <div class="container">
         <hr style="margin-top:1px;">
         <div class="isi">
-            <h2 style="text-align:center;">LAPORAN DATA GANGGUAN</h2>
+            <h2 style="text-align:center;">LAPORAN DATA CAMAT</h2>
             <br>
-            <table class="table table-bordered" id="basic-data-table">
+            <table id="myTable" class="table table-bordered table-striped dataTable no-footer text-center" role="grid"
+                aria-describedby="myTable_info">
                 <thead>
 
                     <tr>
                         <th>No</th>
-                        <th>No Gangguan</th>
-                        <th>Tanggal Gangguan</th>
-                        <th>Camat Penanggung Jawab</th>
-                        <th>Kasi Penanggung Jawab</th>
-                        <th>Petugas Penanggung Jawab</th>
-                        <th>Desa</th>
-                        <th>Deskripsi Gangguan</th>
-                        <th>Penanganan</th>
+                        <th>NIP</th>
+                        <th>Nama</th>
+                        <th>Pangkat</th>
+                        <th>Tanggal Menjabat</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,14 +130,11 @@
 
                     <tr>
                         <td>{{$loop->iteration}}</td>
-                        <td>{{$d->no_gangguan}}</td>
-                        <td>{{carbon\carbon::parse($d->tanggal_gangguan)->translatedFormat('d F Y')}}</td>
-                        <td>{{$d->camat->nama}}</td>
-                        <td>{{$d->kasi->nama}}</td>
-                        <td>{{$d->petugas->nama_petugas}}</td>
-                        <td>{{$d->desa->nama_desa}}</td>
-                        <td>{{$d->deskripsi_gangguan}}</td>
-                        <td>{{$d->penanganan}}</td>
+                        <td>{{$d->nip}}</td>
+                        <td>{{$d->nama}}</td>
+                        <td>{{$d->pangkat}}</td>
+                        <td>{{carbon\carbon::parse($d->tanggal_menjabat)->translatedFormat('d F Y')}}</td>
+
                     </tr>
                     @endforeach
 

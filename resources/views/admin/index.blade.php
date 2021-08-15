@@ -5,16 +5,16 @@
 <!-- ============================================================== -->
 <div class="row page-titles">
     <div class="col-md-5 align-self-center">
-        <h4 class="text-themecolor">Blank Page</h4>
+        <h4 class="text-themecolor">Dashboard Admin</h4>
     </div>
     <div class="col-md-7 align-self-center text-right">
         <div class="d-flex justify-content-end align-items-center">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                <li class="breadcrumb-item active">Blank Page</li>
+                <li class="breadcrumb-item active">Dashboard Admin</li>
             </ol>
-            <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create
-                New</button>
+            {{-- <button type="button" class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Create
+                New</button> --}}
         </div>
     </div>
 </div>
@@ -25,13 +25,86 @@
 <!-- Start Page Content -->
 <!-- ============================================================== -->
 <div class="row">
-    <div class="col-12">
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
         <div class="card">
             <div class="card-body">
-                This is some text within a card block.
+                <div class="row p-t-10 p-b-10">
+                    <!-- Column -->
+                    <div class="col p-r-0">
+                        <h1 class="font-light">{{$kegiatan}}</h1>
+                        <h6 class="text-muted">Kegiatan</h6>
+                    </div>
+                    <!-- Column -->
+                    <div class="col text-right align-self-center">
+                        <div data-label="20%" class="css-bar m-b-0 css-bar-primary css-bar-20"><i
+                                class="mdi mdi-account-circle"></i></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row p-t-10 p-b-10">
+                    <!-- Column -->
+                    <div class="col p-r-0">
+                        <h1 class="font-light">{{$konflik}}</h1>
+                        <h6 class="text-muted">Konflik</h6>
+                    </div>
+                    <!-- Column -->
+                    <div class="col text-right align-self-center">
+                        <div data-label="30%" class="css-bar m-b-0 css-bar-danger css-bar-20"><i
+                                class="mdi mdi-briefcase-check"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row p-t-10 p-b-10">
+                    <!-- Column -->
+                    <div class="col p-r-0">
+                        <h1 class="font-light">{{$gangguan}}</h1>
+                        <h6 class="text-muted">Gangguan</h6>
+                    </div>
+                    <!-- Column -->
+                    <div class="col text-right align-self-center">
+                        <div data-label="40%" class="css-bar m-b-0 css-bar-warning css-bar-40"><i
+                                class="mdi mdi-star-circle"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-3 col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="row p-t-10 p-b-10">
+                    <!-- Column -->
+                    <div class="col p-r-0">
+                        <h1 class="font-light">{{$kriminal}}</h1>
+                        <h6 class="text-muted">Kriminal</h6>
+                    </div>
+                    <!-- Column -->
+                    <div class="col text-right align-self-center">
+                        <div data-label="60%" class="css-bar m-b-0 css-bar-info css-bar-60"><i
+                                class="mdi mdi-receipt"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
 </div>
 <!-- ============================================================== -->
 <!-- End PAge Content -->
@@ -40,70 +113,6 @@
 <!-- Right sidebar -->
 <!-- ============================================================== -->
 <!-- .right-sidebar -->
-<div class="right-sidebar">
-    <div class="slimscrollright">
-        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span>
-        </div>
-        <div class="r-panel-body">
-            <ul id="themecolors" class="m-t-20">
-                <li><b>With Light sidebar</b></li>
-                <li><a href="javascript:void(0)" data-skin="skin-default" class="default-theme">1</a>
-                </li>
-                <li><a href="javascript:void(0)" data-skin="skin-green" class="green-theme">2</a></li>
-                <li><a href="javascript:void(0)" data-skin="skin-red" class="red-theme">3</a></li>
-                <li><a href="javascript:void(0)" data-skin="skin-blue" class="blue-theme">4</a></li>
-                <li><a href="javascript:void(0)" data-skin="skin-purple" class="purple-theme">5</a></li>
-                <li><a href="javascript:void(0)" data-skin="skin-megna" class="megna-theme">6</a></li>
-                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
-                <li><a href="javascript:void(0)" data-skin="skin-default-dark" class="default-dark-theme working">7</a>
-                </li>
-                <li><a href="javascript:void(0)" data-skin="skin-green-dark" class="green-dark-theme">8</a></li>
-                <li><a href="javascript:void(0)" data-skin="skin-red-dark" class="red-dark-theme">9</a>
-                </li>
-                <li><a href="javascript:void(0)" data-skin="skin-blue-dark" class="blue-dark-theme">10</a></li>
-                <li><a href="javascript:void(0)" data-skin="skin-purple-dark" class="purple-dark-theme">11</a></li>
-                <li><a href="javascript:void(0)" data-skin="skin-megna-dark" class="megna-dark-theme ">12</a></li>
-            </ul>
-            <ul class="m-t-20 chatonline">
-                <li><b>Chat option</b></li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img"
-                            class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img"
-                            class="img-circle"> <span>Genelia Deshmukh <small
-                                class="text-warning">Away</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img"
-                            class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img"
-                            class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img"
-                            class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img"
-                            class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img"
-                            class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img"
-                            class="img-circle"> <span>Pwandeep rajan <small
-                                class="text-success">online</small></span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
 <!-- ============================================================== -->
 <!-- End Right sidebar -->
 <!-- ============================================================== -->

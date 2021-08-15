@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Camat;
 use App\Models\Gangguan;
+use App\Models\Kasi;
 use App\Models\Kegiatan;
 use App\Models\Konflik;
 use App\Models\Kriminal;
+use App\Models\Petugas;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use PDF;
@@ -334,10 +337,51 @@ class ReportController extends Controller
     public function grafik()
     {
         $now = $this->now;
-        $pdf = PDF::loadView('admin.report.grafik', ['data' => $data, 'now' => $now]);
+
+        $konflik = Konflik::all()->count();
+        $gangguan = Gangguan::all()->count();
+        $kriminal = Kriminal::all()->count();
+        return view('admin.report.grafik', compact('now', 'konflik', 'gangguan', 'kriminal'));
+        // $pdf = PDF::loadView('admin.report.grafik', compact('now', 'konflik', 'gangguan', 'kriminal'));
+        // $pdf->setPaper('a4', 'landscape');
+
+        // return $pdf->stream('Laporan Grafik Kejadian.pdf');
+
+    }
+
+    public function petugas()
+    {
+        $now = $this->now;
+        $data = Petugas::all();
+        // return view('admin.report.grafik', compact('now', 'konflik', 'gangguan', 'kriminal'));
+        $pdf = PDF::loadView('admin.report.petugas', compact('now', 'data'));
         $pdf->setPaper('a4', 'landscape');
 
-        return $pdf->stream('Laporan Grafik Kejadian.pdf');
+        return $pdf->stream('Laporan Data Petugas.pdf');
+
+    }
+
+    public function camat()
+    {
+        $now = $this->now;
+        $data = Camat::all();
+        // return view('admin.report.grafik', compact('now', 'konflik', 'gangguan', 'kriminal'));
+        $pdf = PDF::loadView('admin.report.camat', compact('now', 'data'));
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Data Camat.pdf');
+
+    }
+
+    public function kasi()
+    {
+        $now = $this->now;
+        $data = Kasi::all();
+        // return view('admin.report.grafik', compact('now', 'konflik', 'gangguan', 'kriminal'));
+        $pdf = PDF::loadView('admin.report.kasi', compact('now', 'data'));
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Data Kasi.pdf');
 
     }
 }

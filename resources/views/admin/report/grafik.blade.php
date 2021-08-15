@@ -5,7 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Grafik Kejadian</title>
+    <link href="{{asset('assets/node_modules/morrisjs/morris.css')}}" rel="stylesheet">
+    <style type="text/css" media="print">
+        @page {
+            size: landscape;
+        }
+    </style>
     <style>
         h4,
         h2 {
@@ -96,7 +102,7 @@
 <body>
     <div class="header">
         <div class="logo">
-            <img class="pemko" src="ART.png">
+            <img class="pemko" src="{{asset('ART.png')}}">
         </div>
         <div class="headtext">
             <h3 style="margin:0px;">PEMERINTAH KOTA BANJARBARU </h3>
@@ -111,41 +117,17 @@
     <div class="container">
         <hr style="margin-top:1px;">
         <div class="isi">
-            <h2 style="text-align:center;">LAPORAN DATA GANGGUAN</h2>
+            <h2 style="text-align:center;">GRAFIK KASUS DAN KEJADIAN</h2>
             <br>
-            <table class="table table-bordered" id="basic-data-table">
-                <thead>
-
-                    <tr>
-                        <th>No</th>
-                        <th>No Gangguan</th>
-                        <th>Tanggal Gangguan</th>
-                        <th>Camat Penanggung Jawab</th>
-                        <th>Kasi Penanggung Jawab</th>
-                        <th>Petugas Penanggung Jawab</th>
-                        <th>Desa</th>
-                        <th>Deskripsi Gangguan</th>
-                        <th>Penanganan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($data as $d)
-
-                    <tr>
-                        <td>{{$loop->iteration}}</td>
-                        <td>{{$d->no_gangguan}}</td>
-                        <td>{{carbon\carbon::parse($d->tanggal_gangguan)->translatedFormat('d F Y')}}</td>
-                        <td>{{$d->camat->nama}}</td>
-                        <td>{{$d->kasi->nama}}</td>
-                        <td>{{$d->petugas->nama_petugas}}</td>
-                        <td>{{$d->desa->nama_desa}}</td>
-                        <td>{{$d->deskripsi_gangguan}}</td>
-                        <td>{{$d->penanganan}}</td>
-                    </tr>
-                    @endforeach
-
-                </tbody>
-            </table>
+            <div class="row">
+                <div class="col-md-4 col-lg-4 col-xs-4">
+                    <div class="card">
+                        <div class="card-body" width="40px">
+                            <div id="morris-bar-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <br>
             <br>
             <div class="ttd">
@@ -159,6 +141,32 @@
             </div>
         </div>
     </div>
+
+    <script src="{{asset('assets/node_modules/jquery/jquery-3.2.1.min.js')}}"></script>
+    <script src="{{asset('assets/node_modules/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/node_modules/raphael/raphael-min.js')}}"></script>
+    <script src="{{asset('assets/node_modules/morrisjs/morris.js')}}"></script>
+    <script>
+        window.print();
+        // Morris bar chart
+        Morris.Bar({
+            element: 'morris-bar-chart',
+            data: [{
+                y: 'Grafik Kasus Kejadian',
+                a: {{$konflik}},
+                b: {{$gangguan}},
+                c: {{$kriminal}}
+            }],
+            xkey: 'y',
+            ykeys: ['a', 'b', 'c'],
+            labels: ['Konflik', 'Gangguan Ketertiban', 'Kriminal'],
+            barColors:['#b8edf0', '#b4c1d7', '#fcc9ba'],
+            hideHover: false,
+            gridLineColor: '#eef0f2',
+            resize: true
+        });
+        
+    </script>
 </body>
 
 </html>
