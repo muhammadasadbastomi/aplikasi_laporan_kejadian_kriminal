@@ -59,8 +59,8 @@
                     <div class="form-group m-b-40">
                         <select class="form-control p-0" name="role" id="input6" required>
                             <option>Pilih Role User</option>
-                            <option value="0" {{$user->role == 0 ? 'selected' :''}}>Petugas</option>
-                            <option value="1" {{$user->role == 1 ? 'selected' :''}}>Kasi</option>
+                            <option value="0" {{$user->role == 0 ? 'selected' :''}}>Super Admin</option>
+                            <option value="1" {{$user->role == 1 ? 'selected' :''}}>Petugas</option>
                         </select><span class=" bar"></span>
                         <label for="input6">Role User</label>
                     </div>

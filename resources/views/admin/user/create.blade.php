@@ -53,8 +53,8 @@
                     <div class="form-group m-b-40">
                         <select class="form-control p-0" name="role" id="input6" required>
                             <option>Pilih Role User</option>
-                            <option value="0">Petugas</option>
-                            <option value="1">Kasi</option>
+                            <option value="0">Super Admin</option>
+                            <option value="1">Petugas</option>
                         </select><span class="bar"></span>
                         <label for="input6">Role User</label>
                     </div>

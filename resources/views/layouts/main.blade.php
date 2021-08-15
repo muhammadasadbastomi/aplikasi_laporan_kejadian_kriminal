@@ -406,6 +406,7 @@
                     <li> <a class="waves-effect waves-dark" href="{{Route('admin.index')}}"><i
                                 class="icon-speedometer"></i><span class="hide-menu">Dashboard</span></a>
                     </li>
+                    @if (Auth::user()->role == 0)
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
                                 class="ti-palette"></i><span class="hide-menu">Manajemen User
                         </a>
@@ -424,16 +425,6 @@
                         </ul>
                     </li>
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
-                                class="ti-menu"></i><span class="hide-menu">Laporan
-                                Kejadian</span></a>
-                        <ul aria-expanded="false" class="collapse">
-                            <li><a href="{{route('admin.kegiatan.index')}}">Kegiatan</a></li>
-                            <li><a href="{{route('admin.konflik.index')}}">Konflik</a></li>
-                            <li><a href="{{route('admin.gangguan.index')}}">Gangguan</a></li>
-                            <li><a href="{{route('admin.kriminal.index')}}">Kriminal</a></li>
-                        </ul>
-                    </li>
-                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
                                 class="ti-bar-chart"></i><span class="hide-menu">Cetak Laporan
                             </span></a>
                         <ul aria-expanded="false" class="collapse">
@@ -447,6 +438,19 @@
                             <li><a href="{{route('admin.report.kasi')}}">Kasi</a></li>
                         </ul>
                     </li>
+                    @else
+                    <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
+                                class="ti-menu"></i><span class="hide-menu">Laporan
+                                Kejadian</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="{{route('admin.kegiatan.index')}}">Kegiatan</a></li>
+                            <li><a href="{{route('admin.konflik.index')}}">Konflik</a></li>
+                            <li><a href="{{route('admin.gangguan.index')}}">Gangguan</a></li>
+                            <li><a href="{{route('admin.kriminal.index')}}">Kriminal</a></li>
+                        </ul>
+                    </li>
+                    @endif
+
                 </ul>
             </nav>
             <!-- End Sidebar navigation -->
