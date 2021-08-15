@@ -104,7 +104,17 @@
             </div>
         </div>
     </div>
+
     <!-- Column -->
+</div>
+<div class="row">
+    <div class="col-md-12 col-lg-12 col-xs-12">
+        <div class="card">
+            <div class="card-body">
+                <div id="morris-bar-chart"></div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- ============================================================== -->
 <!-- End PAge Content -->
@@ -116,4 +126,31 @@
 <!-- ============================================================== -->
 <!-- End Right sidebar -->
 <!-- ============================================================== -->
+@endsection
+@section('css')
+<link href="{{asset('assets/node_modules/morrisjs/morris.css')}}" rel="stylesheet">
+
+@endsection
+@section('script')
+<script src="{{asset('assets/node_modules/raphael/raphael-min.js')}}"></script>
+<script src="{{asset('assets/node_modules/morrisjs/morris.js')}}"></script>
+<script>
+    Morris.Bar({
+    element: 'morris-bar-chart',
+    data: [{
+    y: 'Grafik Kasus Kejadian',
+    a: {{$konflik}},
+    b: {{$gangguan}},
+    c: {{$kriminal}}
+    }],
+    xkey: 'y',
+    ykeys: ['a', 'b', 'c'],
+    labels: ['Konflik', 'Gangguan Ketertiban', 'Kriminal'],
+    barColors:['#b8edf0', '#b4c1d7', '#fcc9ba'],
+    hideHover: true,
+    gridLineColor: '#eef0f2',
+    resize: true
+    });
+</script>
+
 @endsection
