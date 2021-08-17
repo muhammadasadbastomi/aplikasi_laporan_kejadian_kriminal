@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
-    <title>Elite Admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Aplikasi Laporan Kejadian Kriminal</title>
     <!-- Custom CSS -->
     <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
     <link href="{{asset('dist/css/pages/floating-label.css')}}" rel="stylesheet">
@@ -419,9 +419,12 @@
                                 Data</span></a>
                         <ul aria-expanded="false" class="collapse">
                             <li><a href="{{route('admin.desa.index')}}">Desa</a></li>
+                            <li><a href="{{route('admin.jabatan.index')}}">Jabatan</a></li>
                             <li><a href="{{route('admin.camat.index')}}">Camat</a></li>
                             <li><a href="{{route('admin.kasi.index')}}">Kepala Seksi</a></li>
                             <li><a href="{{route('admin.petugas.index')}}">Petugas</a></li>
+                            <li><a href="{{route('admin.pegawai.index')}}">Pegawai</a></li>
+                            <li><a href="{{route('admin.jadwal.index')}}">Jadwal Petugas</a></li>
                         </ul>
                     </li>
                     <li> <a class="has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i
@@ -445,7 +448,10 @@
                             <li><a href="{{route('admin.report.grafik')}}">Grafik Kejadian</a></li>
                             <li><a href="{{route('admin.report.camat')}}">Camat</a></li>
                             <li><a href="{{route('admin.report.petugas')}}">Petugas</a></li>
+                            <li><a href="{{route('admin.report.pegawai')}}">Pegawai</a></li>
                             <li><a href="{{route('admin.report.kasi')}}">Kasi</a></li>
+                            <li><a href="{{route('admin.report.jadwal')}}">Jadwal Petugas</a></li>
+                            <li><a href="{{route('admin.report.suratIndex')}}">Surat Tugas Petugas</a></li>
                         </ul>
                     </li>
                     @else

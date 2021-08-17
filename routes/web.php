@@ -4,11 +4,14 @@ use App\Http\Controllers\CamatController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DesaController;
 use App\Http\Controllers\GangguanController;
+use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\KasiController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\KonflikController;
 use App\Http\Controllers\KriminalController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\PetugasController;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
@@ -48,6 +51,9 @@ Route::middleware(['admin'])->group(function () {
         Route::resource('konflik', KonflikController::class);
         Route::resource('gangguan', GangguanController::class);
         Route::resource('kriminal', KriminalController::class);
+        Route::resource('jadwal', JadwalController::class);
+        Route::resource('jabatan', JabatanController::class);
+        Route::resource('pegawai', PegawaiController::class);
 
         Route::name('report.')->prefix('laporan')->group(function () {
             Route::get('kegiatan', [ReportController::class, 'kegiatanIndex'])->name('kegiatanIndex');
@@ -74,6 +80,10 @@ Route::middleware(['admin'])->group(function () {
             Route::get('/cetak/petugas', [ReportController::class, 'petugas'])->name('petugas');
             Route::get('/cetak/kasi', [ReportController::class, 'kasi'])->name('kasi');
             Route::get('/cetak/camat', [ReportController::class, 'camat'])->name('camat');
+            Route::get('/cetak/jadwal-petugas', [ReportController::class, 'jadwal'])->name('jadwal');
+            Route::get('surat-petugas', [ReportController::class, 'suratIndex'])->name('suratIndex');
+            Route::post('/cetak/surat-petugas/', [ReportController::class, 'surat'])->name('surat');
+            Route::get('/cetak/pegawai', [ReportController::class, 'pegawai'])->name('pegawai');
         });
     });
 });

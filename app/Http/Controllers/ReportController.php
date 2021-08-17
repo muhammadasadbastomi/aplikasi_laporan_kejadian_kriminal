@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Camat;
 use App\Models\Gangguan;
+use App\Models\Jadwal;
 use App\Models\Kasi;
 use App\Models\Kegiatan;
 use App\Models\Konflik;
 use App\Models\Kriminal;
+use App\Models\Pegawai;
 use App\Models\Petugas;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -382,6 +384,50 @@ class ReportController extends Controller
         $pdf->setPaper('a4', 'landscape');
 
         return $pdf->stream('Laporan Data Kasi.pdf');
+
+    }
+
+    public function jadwal()
+    {
+        $now = $this->now;
+        $Senin = Jadwal::whereHari('Senin')->get();
+        $Selasa = Jadwal::whereHari('Selasa')->get();
+        $Rabu = Jadwal::whereHari('Rabu')->get();
+        $Kamis = Jadwal::whereHari('Kamis')->get();
+        $Jumat = Jadwal::whereHari('Jumat')->get();
+        $data = Jadwal::all();
+        $pdf = PDF::loadView('admin.report.jadwal-petugas', compact('now', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'data'));
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Data Jadwal Petugas.pdf');
+
+    }
+
+    public function suratIndex()
+    {
+        $petugas = Petugas::all();
+        return view('admin.report.suratIndex', compact('petugas'));
+    }
+    public function surat(Request $request)
+    {
+        $now = $this->now;
+        $data = Petugas::findOrFail($request->petugas_id);
+        $pdf = PDF::loadView('admin.report.surat-tugas', compact('now', 'data'));
+        $pdf->setPaper('a4', 'potrait');
+
+        return $pdf->stream('Laporan Surat Petugas.pdf');
+
+    }
+
+    public function pegawai()
+    {
+        $now = $this->now;
+        $data = Pegawai::all();
+        // return view('admin.report.grafik', compact('now', 'konflik', 'gangguan', 'kriminal'));
+        $pdf = PDF::loadView('admin.report.pegawai', compact('now', 'data'));
+        $pdf->setPaper('a4', 'landscape');
+
+        return $pdf->stream('Laporan Data Pegawai.pdf');
 
     }
 }
