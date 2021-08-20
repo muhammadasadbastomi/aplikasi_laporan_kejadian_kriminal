@@ -39,7 +39,7 @@
                                 <td>{{$kriminal->no_kasus}}</td>
                             </tr>
                             <tr>
-                                <td width="20%">Nomor Kriminal</td>
+                                <td width="20%">Jenis Kriminal</td>
                                 <td width="2px">:</td>
                                 <td>{{$kriminal->jenis_kriminal}}</td>
                             </tr>
