@@ -63,7 +63,7 @@ class KonflikController extends Controller
      */
     public function show(Konflik $konflik)
     {
-        //
+        return view('admin.konflik.show', compact('konflik'));
     }
 
     /**

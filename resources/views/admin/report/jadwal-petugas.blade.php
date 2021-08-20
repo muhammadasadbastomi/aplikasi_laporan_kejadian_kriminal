@@ -132,27 +132,27 @@
                         {{-- <td style="text-align : center !important">1</td> --}}
                         <td>
                             @foreach ($Senin as $d)
-                            &nbsp;{{$d->petugas->nama_petugas}} <br>
+                            &nbsp;{{$d->petugas->pegawai->nama}} <br>
                             @endforeach
                         </td>
                         <td>
                             @foreach ($Selasa as $d)
-                            &nbsp;{{$d->petugas->nama_petugas}} <br>
+                            &nbsp;{{$d->petugas->pegawai->nama}} <br>
                             @endforeach
                         </td>
                         <td>
                             @foreach ($Rabu as $d)
-                            &nbsp;{{$d->petugas->nama_petugas}} <br>
+                            &nbsp;{{$d->petugas->pegawai->nama}} <br>
                             @endforeach
                         </td>
                         <td>
                             @foreach ($Kamis as $d)
-                            &nbsp;{{$d->petugas->nama_petugas}} <br>
+                            &nbsp;{{$d->petugas->pegawai->nama}} <br>
                             @endforeach
                         </td>
                         <td>
                             @foreach ($Jumat as $d)
-                            &nbsp;{{$d->petugas->nama_petugas}} <br>
+                            &nbsp;{{$d->petugas->pegawai->nama}} <br>
                             @endforeach
                         </td>
 

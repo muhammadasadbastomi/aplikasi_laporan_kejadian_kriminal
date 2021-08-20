@@ -111,74 +111,72 @@
     <div class="container">
         <hr style="margin-top:1px;">
         <div class="isi">
-            <h2 style="text-align:center; text-decoration:underline;margin:0px;">SURAT TUGAS</h2>
+            <h2 style="text-align:center; text-decoration:underline;margin:0px;">BERITA ACARA KRIMINAL</h2>
             <h5 style="text-align:center; text-decoration:underline; margin:10px;">Nomor:
-                445/KEC/ST-{{Carbon\carbon::parse($data->created_at)->format('Y')}}</h5>
+                441/KEC/BA-{{Carbon\carbon::parse($data->created_at)->format('Y')}}</h5>
             <br>
-            <p style="text-align: justify;">Yang bertanda Tangan Dibawah ini:</p>
-            {{-- <h2 style="text-align: center; text-transform:uppercase;text-decoration:underline;">
-                {{'TES'}}</h2> --}}
-            <table>
-                <tr>
-                    <td style="height:30px !important;">Nama</td>
-                    <td>:</td>
-                    <td>Agus Fahlufi, SIP, M.Si</td>
-                </tr>
-                <tr>
-                    <td style="height:30px !important;">NIP</td>
-                    <td>:</td>
-                    <td>19710830 199101 1 002</td>
-                </tr>
-                <tr>
-                    <td style="height:30px !important;">Pangkat/Golongan</td>
-                    <td>:</td>
-                    <td>Pembina Utama Muda / IV/C.</td>
-                </tr>
 
-            </table>
-
-            <br>
-            <p style="text-align: justify;">Memberikan Tugas Kepada:</p>
+            <p style="text-align: justify;">Pada hari
+                {{carbon\carbon::parse($data->tanggal_kejadian)->translatedFormat('l')}},
+                {{carbon\carbon::parse($data->tanggal_kejadian)->translatedFormat('d F Y')}} telah terjadi tindak
+                kriminal dengan keterangan sebagai berikut:</p>
             {{-- <h2 style="text-align: center; text-transform:uppercase;text-decoration:underline;">
                             {{'TES'}}</h2> --}}
             <table>
                 <tr>
-                    <td style="height:30px !important;">ID Petugas</td>
-                    <td>:</td>
-                    <td>{{$data->id_petugas}}</td>
+                    <td width="40%" style="height:50px !important;">Nomor Kriminal</td>
+                    <td width="2px">:</td>
+                    <td>{{$data->no_kasus}}</td>
                 </tr>
                 <tr>
-                    <td style="height:30px !important;">Nama</td>
-                    <td>:</td>
-                    <td>{{$data->pegawai->nama}}</td>
+                    <td width="40%" style="height:50px !important;">Deskripsi Kriminal</td>
+                    <td width="2px">:</td>
+                    <td>{{$data->deskripsi_kriminal}}</td>
+                </tr>
+                <tr>
+                    <td width="40%" style="height:50px !important;">Tanggal Kriminal</td>
+                    <td width="2px">:</td>
+                    <td>{{carbon\carbon::parse($data->tanggal_kejadian)->translatedFormat('d F Y')}}</td>
+                </tr>
+                <tr>
+                    <td width="40%" style="height:50px !important;">Pelaku</td>
+                    <td width="2px">:</td>
+                    <td>{{$data->pelaku}}</td>
+                </tr>
+                <tr>
+                    <td width="40%" style="height:50px !important;">Korban</td>
+                    <td width="2px">:</td>
+                    <td>{{$data->korban}}</td>
+                </tr>
+                <tr>
+                    <td width="40%" style="height:50px !important;">Saksi</td>
+                    <td width="2px">:</td>
+                    <td>{{$data->saksi}}</td>
+                </tr>
+                <tr>
+                    <td width="40%" style="height:50px !important;">Kasi Penanggung Jawab</td>
+                    <td width="2px">:</td>
+                    <td>{{$data->kasi->nama}}</td>
+                </tr>
+                <tr>
+                    <td width="40%" style="height:50px !important;">Petugas Penanggung Jawab</td>
+                    <td width="2px">:</td>
+                    <td>{{$data->petugas->pegawai->nama}}</td>
                 </tr>
 
             </table>
             <br>
-            <p style="text-align: justify;">Untuk membantu melaksanakan tugas pada Kecamatan Cempaka dalam rangka:</p>
-            <table>
-                <tr>
-                    <td>1. Melakukan input kegiatan pada Kecamatan Cempaka</td>
-                </tr>
-                <tr>
-                    <td>2. Melakukan input kejadian gangguan pada Kecamatan Cempaka </td>
-                </tr>
-                <tr>
-                    <td>3. Melakukan input kejadian kriminal pada Kecamatan Cempaka </td>
-                </tr>
-                <tr>
-                    <td>4. Melakukan input kejadian konflik pada Kecamatan Cempaka </td>
-                </tr>
-            </table>
+            <p style="text-align: justify;">
+                Demikian berita acara ini dibuat sesungguhnya untuk dipergunakan sebagai mestinya.
+            </p>
             <br>
             <br>
             <table>
                 <tr>
-                    <td width="50%"></td>
-                    <td>
-                        Ditetapkan di : Cempaka<br>
-                        Pada Tanggal : {{carbon\carbon::parse($data->tanggal_bertugas)->translatedFormat('d F Y')}}<br>
-                        --------------------------------------------------- <br>
+                    {{-- <td ></td> --}}
+                    <td style="text-align: right; padding-right:30px" width="40%">
+                        Banjarbaru,
+                        {{carbon\carbon::parse($data->tanggal_kejadian)->translatedFormat('d F Y')}}
                     </td>
                 </tr>
             </table>
@@ -187,6 +185,7 @@
                     <td style="text-align: right; width:60%">
                     </td>
                     <td style="text-align: center;">
+                        {{-- {{carbon\carbon::parse($data->tanggal_kejadian)->translatedFormat('d F Y')}} --}}
                         Camat
                         <br>
                         <br>

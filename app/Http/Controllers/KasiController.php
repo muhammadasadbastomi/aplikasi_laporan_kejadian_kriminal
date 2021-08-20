@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jabatan;
 use App\Models\Kasi;
 use File;
 use Illuminate\Database\QueryException;
@@ -27,7 +28,9 @@ class KasiController extends Controller
      */
     public function create()
     {
-        return view('admin.kasi.create');
+        $jabatan = Jabatan::all();
+
+        return view('admin.kasi.create', compact('jabatan'));
     }
 
     /**
@@ -74,8 +77,9 @@ class KasiController extends Controller
      */
     public function edit(Kasi $kasi)
     {
+        $jabatan = Jabatan::all();
 
-        return view('admin.kasi.edit', compact('kasi'));
+        return view('admin.kasi.edit', compact('kasi', 'jabatan'));
 
     }
 
@@ -115,7 +119,7 @@ class KasiController extends Controller
     {
 
         try {
-            File::delete('foto/' . $kasi->foto);
+            File::delete('foto' . $kasi->foto);
             $kasi->delete();
             return back()->withSuccess('Data berhasil dihapus');
         } catch (QueryException $e) {

@@ -36,9 +36,13 @@
                         <label for="input3">ID Petugas</label>
                     </div>
                     <div class="form-group m-b-40">
-                        <input type="text" name="nama_petugas" class="form-control" id="input1" required>
-                        <span class="bar"></span>
-                        <label for="input1">Nama Lengkap</label>
+                        <select class="form-control p-0" name="pegawai_id" id="input6" required>
+                            <option>Pilih Pegawai</option>
+                            @foreach ($pegawai as $d)
+                            <option value="{{$d->id}}">{{$d->nama}}</option>
+                            @endforeach
+                        </select><span class="bar"></span>
+                        <label for="input6">Pegawai</label>
                     </div>
                     <div class="form-group m-b-40">
                         <select class="form-control p-0" name="status" id="input6" required>

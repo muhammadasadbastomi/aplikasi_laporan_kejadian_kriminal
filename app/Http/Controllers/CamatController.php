@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Camat;
+use App\Models\Jabatan;
 use File;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -27,7 +28,9 @@ class CamatController extends Controller
      */
     public function create()
     {
-        return view('admin.camat.create');
+        $jabatan = Jabatan::all();
+
+        return view('admin.camat.create', compact('jabatan'));
     }
 
     /**
@@ -74,8 +77,9 @@ class CamatController extends Controller
      */
     public function edit(Camat $camat)
     {
+        $jabatan = Jabatan::all();
 
-        return view('admin.camat.edit', compact('camat'));
+        return view('admin.camat.edit', compact('camat', 'jabatan'));
 
     }
 

@@ -68,8 +68,9 @@ class JadwalController extends Controller
      */
     public function edit(Jadwal $jadwal)
     {
+        $petugas = Petugas::all();
 
-        return view('admin.jadwal.edit', compact('jadwal'));
+        return view('admin.jadwal.edit', compact('jadwal', 'petugas'));
 
     }
 

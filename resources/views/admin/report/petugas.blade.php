@@ -131,7 +131,7 @@
                     <tr>
                         <td>{{$loop->iteration}}</td>
                         <td>{{$d->id_petugas}}</td>
-                        <td>{{$d->nama_petugas}}</td>
+                        <td>{{$d->pegawai->nama}}</td>
                         <td>{{carbon\carbon::parse($d->tanggal_bertugas)->translatedFormat('d F Y')}}</td>
                         <td>
                             @if ($d->status == 'Aktif')

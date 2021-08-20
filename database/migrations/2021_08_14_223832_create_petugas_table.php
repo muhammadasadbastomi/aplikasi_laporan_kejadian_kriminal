@@ -16,7 +16,8 @@ class CreatePetugasTable extends Migration
         Schema::create('petugas', function (Blueprint $table) {
             $table->id();
             $table->string('id_petugas');
-            $table->string('nama_petugas');
+            $table->unsignedBigInteger('pegawai_id');
+            $table->foreign('pegawai_id')->references('id')->on('pegawais')->onDelete('restrict');
             $table->string('status');
             $table->date('tanggal_bertugas');
             $table->timestamps();

@@ -53,19 +53,20 @@
                                 <td>{{$d->no_gangguan}}</td>
                                 <td>{{$d->camat->nama}}</td>
                                 <td>{{$d->kasi->nama}}</td>
-                                <td>{{$d->petugas->nama_petugas}}</td>
+                                <td>{{$d->petugas->pegawai->nama}}</td>
                                 <td>{{$d->deskripsi_gangguan}}</td>
                                 <td>{{carbon\carbon::parse($d->tanggal_gangguan)->translatedFormat('d F Y')}}</td>
                                 <td>
-                                    <a href="{{Route('admin.gangguan.edit',$d->id)}}" class="btn btn-info m-l-15"><i
-                                            class="fa fa-edit"></i>
+                                    <a href="{{Route('admin.gangguan.edit',$d->id)}}"
+                                        class="btn btn-sm btn-info m-l-15"><i class="fa fa-edit"></i>
                                         Edit</a>
-                                    <form action="{{Route('admin.gangguan.destroy',$d->id)}}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger m-l-15"><i class="fa fa-trash"></i>
-                                            Hapus</button>
-                                    </form>
+                                    <a href="{{Route('admin.gangguan.show',$d->id)}}"
+                                        class="btn btn-sm btn-primary m-l-15"><i class="fa fa-eye"></i>
+                                        Detail</a>
+                                    <button type="button" data-route="{{Route('admin.gangguan.destroy',$d->id)}}"
+                                        class="btn btn-sm btn-danger m-l-15 delete" data-toggle="modal"
+                                        data-target="#exampleModal"><i class="fa fa-trash"></i> Hapus
+                                    </button>
                                 </td>
                             </tr>
                             @endforeach
@@ -77,6 +78,7 @@
             </div>
         </div>
     </div>
+    @include('layouts.delete')
 </div>
 <!-- ============================================================== -->
 <!-- End PAge Content -->

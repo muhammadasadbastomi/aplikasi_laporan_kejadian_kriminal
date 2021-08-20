@@ -63,7 +63,7 @@ class KriminalController extends Controller
      */
     public function show(Kriminal $kriminal)
     {
-        //
+        return view('admin.kriminal.show', compact('kriminal'));
     }
 
     /**

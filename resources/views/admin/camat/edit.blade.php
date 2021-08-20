@@ -49,6 +49,16 @@
                         <label for="input3">Pangkat</label>
                     </div>
                     <div class="form-group m-b-40">
+                        <select class="form-control p-0" name="jabatan_id" id="input6" required>
+                            <option>Pilih Jabatan</option>
+                            @foreach ($jabatan as $d)
+                            <option value="{{$d->id}}" {{$d->id == $camat->jabatan_id ? 'selected' : ''}}>
+                                {{$d->kode_jabatan . ' - ' . $d->nama_jabatan }}</option>
+                            @endforeach
+                        </select><span class="bar"></span>
+                        <label for="input6">Jabatan</label>
+                    </div>
+                    <div class="form-group m-b-40">
                         <input type="date" name="tanggal_menjabat" value="{{$camat->tanggal_menjabat}}"
                             class="form-control" id="input3" required>
                         <span class="bar"></span>

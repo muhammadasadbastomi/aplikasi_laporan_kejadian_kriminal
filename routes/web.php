@@ -84,6 +84,10 @@ Route::middleware(['admin'])->group(function () {
             Route::get('surat-petugas', [ReportController::class, 'suratIndex'])->name('suratIndex');
             Route::post('/cetak/surat-petugas/', [ReportController::class, 'surat'])->name('surat');
             Route::get('/cetak/pegawai', [ReportController::class, 'pegawai'])->name('pegawai');
+            Route::get('/cetak/BA-kegiatan/{id}', [ReportController::class, 'baKegiatan'])->name('baKegiatan');
+            Route::get('/cetak/BA-gangguan/{id}', [ReportController::class, 'baGangguan'])->name('baGangguan');
+            Route::get('/cetak/BA-konflik/{id}', [ReportController::class, 'baKonflik'])->name('baKonflik');
+            Route::get('/cetak/BA-kriminal/{id}', [ReportController::class, 'baKriminal'])->name('baKriminal');
         });
     });
 });

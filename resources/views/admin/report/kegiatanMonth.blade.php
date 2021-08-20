@@ -136,7 +136,7 @@
                         <td>{{carbon\carbon::parse($d->tanggal_kegiatan)->translatedFormat('d F Y')}}</td>
                         <td>{{$d->camat->nama}}</td>
                         <td>{{$d->kasi->nama}}</td>
-                        <td>{{$d->petugas->nama_petugas}}</td>
+                        <td>{{$d->petugas->pegawai->nama}}</td>
                         <td>{{$d->nama_kegiatan}}</td>
                         <td>{{$d->deskripsi_kegiatan}}</td>
                     </tr>

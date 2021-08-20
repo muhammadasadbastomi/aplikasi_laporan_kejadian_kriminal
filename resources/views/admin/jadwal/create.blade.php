@@ -45,7 +45,7 @@
                         <select class="form-control p-0" name="petugas_id" id="input6" required>
                             <option>Pilih Petugas Penanggung Jawab</option>
                             @foreach ($petugas as $d)
-                            <option value="{{$d->id}}">{{$d->id_petugas . ' - ' . $d->nama_petugas }}</option>
+                            <option value="{{$d->id}}">{{$d->id_petugas . ' - ' . $d->pegawai->nama }}</option>
                             @endforeach
                         </select><span class="bar"></span>
                         <label for="input6">Petugas Penanggung Jawab</label>

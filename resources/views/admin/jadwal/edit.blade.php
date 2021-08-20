@@ -47,7 +47,7 @@
                             <option>Pilih Petugas Penanggung Jawab</option>
                             @foreach ($petugas as $d)
                             <option value="{{$d->id}}" {{$d->id ==  $jadwal->petugas_id ? 'selected' : ''}}>
-                                {{$d->id_petugas . ' - ' . $d->nama_petugas }}</option>
+                                {{$d->id_petugas . ' - ' . $d->pegawai->nama }}</option>
                             @endforeach
                         </select><span class="bar"></span>
                         <label for="input6">Petugas Penanggung Jawab</label>

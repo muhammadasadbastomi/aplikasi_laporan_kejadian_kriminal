@@ -13,7 +13,8 @@
                 <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
                 <li class="breadcrumb-item active">Laporan Data Konflik</li>
             </ol>
-            <a href="{{Route('admin.report.konflikAll')}}" class="btn btn-info  m-l-15"><i class="fa fa-print"></i>
+            <a target="_blank" href="{{Route('admin.report.konflikAll')}}" class="btn btn-info  m-l-15"><i
+                    class="fa fa-print"></i>
                 Cetak Semua</a>
         </div>
     </div>
@@ -30,8 +31,8 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <form class="floating-labels m-t-40" action="{{route('admin.report.konflikYear')}}"
-                            method="POST" enctype="multipart/form-data">
+                        <form target="_blank" class="floating-labels m-t-40"
+                            action="{{route('admin.report.konflikYear')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group m-b-40">
                                 <input type="text" name="year" class="form-control" id="input1" required>
@@ -45,8 +46,8 @@
                         </form>
                     </div>
                     <div class="col-md-6">
-                        <form class="floating-labels m-t-40" action="{{route('admin.report.konflikMonth')}}"
-                            method="POST" enctype="multipart/form-data">
+                        <form target="_blank" class="floating-labels m-t-40"
+                            action="{{route('admin.report.konflikMonth')}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
                                 <div class="form-group m-b-40 col-md-6">

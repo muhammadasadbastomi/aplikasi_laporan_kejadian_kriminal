@@ -422,8 +422,8 @@
                             <li><a href="{{route('admin.jabatan.index')}}">Jabatan</a></li>
                             <li><a href="{{route('admin.camat.index')}}">Camat</a></li>
                             <li><a href="{{route('admin.kasi.index')}}">Kepala Seksi</a></li>
-                            <li><a href="{{route('admin.petugas.index')}}">Petugas</a></li>
                             <li><a href="{{route('admin.pegawai.index')}}">Pegawai</a></li>
+                            <li><a href="{{route('admin.petugas.index')}}">Petugas</a></li>
                             <li><a href="{{route('admin.jadwal.index')}}">Jadwal Petugas</a></li>
                         </ul>
                     </li>
@@ -445,13 +445,14 @@
                             <li><a href="{{route('admin.report.konflikIndex')}}">Konflik</a></li>
                             <li><a href="{{route('admin.report.gangguanIndex')}}">Gangguan</a></li>
                             <li><a href="{{route('admin.report.kriminalIndex')}}">Kriminal</a></li>
-                            <li><a href="{{route('admin.report.grafik')}}">Grafik Kejadian</a></li>
-                            <li><a href="{{route('admin.report.camat')}}">Camat</a></li>
-                            <li><a href="{{route('admin.report.petugas')}}">Petugas</a></li>
-                            <li><a href="{{route('admin.report.pegawai')}}">Pegawai</a></li>
-                            <li><a href="{{route('admin.report.kasi')}}">Kasi</a></li>
-                            <li><a href="{{route('admin.report.jadwal')}}">Jadwal Petugas</a></li>
-                            <li><a href="{{route('admin.report.suratIndex')}}">Surat Tugas Petugas</a></li>
+                            <li><a target="_blank" href="{{route('admin.report.grafik')}}">Grafik Kejadian</a></li>
+                            <li><a target="_blank" href="{{route('admin.report.camat')}}">Camat</a></li>
+                            <li><a target="_blank" href="{{route('admin.report.pegawai')}}">Pegawai</a></li>
+                            <li><a target="_blank" href="{{route('admin.report.petugas')}}">Petugas</a></li>
+                            <li><a target="_blank" href="{{route('admin.report.kasi')}}">Kasi</a></li>
+                            <li><a target="_blank" href="{{route('admin.report.jadwal')}}">Jadwal Petugas</a></li>
+                            <li><a href="{{route('admin.report.suratIndex')}}">Surat Tugas Petugas</a>
+                            </li>
                         </ul>
                     </li>
                     @else

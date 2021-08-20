@@ -430,4 +430,45 @@ class ReportController extends Controller
         return $pdf->stream('Laporan Data Pegawai.pdf');
 
     }
+
+    public function baKegiatan($id)
+    {
+        $now = $this->now;
+        $data = Kegiatan::findOrFail($id);
+        $pdf = PDF::loadView('admin.report.BA-kegiatan', compact('now', 'data'));
+        $pdf->setPaper('a4', 'potrait');
+
+        return $pdf->stream('Berita acara kegiatan.pdf');
+
+    }
+    public function baGangguan($id)
+    {
+        $now = $this->now;
+        $data = Gangguan::findOrFail($id);
+        $pdf = PDF::loadView('admin.report.BA-gangguan', compact('now', 'data'));
+        $pdf->setPaper('a4', 'potrait');
+
+        return $pdf->stream('Berita acara gangguan.pdf');
+
+    }
+    public function baKriminal($id)
+    {
+        $now = $this->now;
+        $data = Kriminal::findOrFail($id);
+        $pdf = PDF::loadView('admin.report.BA-kriminal', compact('now', 'data'));
+        $pdf->setPaper('a4', 'potrait');
+
+        return $pdf->stream('Berita acara kriminal.pdf');
+
+    }
+    public function baKonflik($id)
+    {
+        $now = $this->now;
+        $data = Konflik::findOrFail($id);
+        $pdf = PDF::loadView('admin.report.BA-konflik', compact('now', 'data'));
+        $pdf->setPaper('a4', 'potrait');
+
+        return $pdf->stream('Berita acara konflik.pdf');
+
+    }
 }

@@ -35,7 +35,7 @@
                                 <select name="petugas_id" id="" class="form-control" required>
                                     @foreach ($petugas as $d)
 
-                                    <option value="{{$d->id}}">{{$d->nama_petugas}}</option>
+                                    <option value="{{$d->id}}">{{$d->id_petugas. ' - '.$d->pegawai->nama}}</option>
                                     @endforeach
                                 </select>
                                 <span class="bar"></span>

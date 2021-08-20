@@ -20,6 +20,8 @@ class CreateCamatsTable extends Migration
             $table->string('pangkat');
             $table->date('tanggal_menjabat');
             $table->string('foto');
+            $table->unsignedBigInteger('jabatan_id');
+            $table->foreign('jabatan_id')->references('id')->on('jabatans')->onDelete('restrict');
             $table->timestamps();
         });
     }

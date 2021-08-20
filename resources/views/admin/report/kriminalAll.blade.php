@@ -139,7 +139,7 @@
                         <td>{{$d->jenis_kriminal}}</td>
                         <td>{{$d->camat->nama}}</td>
                         <td>{{$d->kasi->nama}}</td>
-                        <td>{{$d->petugas->nama_petugas}}</td>
+                        <td>{{$d->petugas->pegawai->nama}}</td>
                         <td>{{$d->deskripsi_kriminal}}</td>
                         <td>{{carbon\carbon::parse($d->tanggal_kejadian)->translatedFormat('d F Y')}}</td>
                         <td>{{$d->pelaku}}</td>

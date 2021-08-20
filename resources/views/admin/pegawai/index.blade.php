@@ -56,12 +56,10 @@
                                     <a href="{{Route('admin.pegawai.edit',$d->id)}}" class="btn btn-info m-l-15"><i
                                             class="fa fa-edit"></i>
                                         Edit</a>
-                                    <form action="{{Route('admin.pegawai.destroy',$d->id)}}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger m-l-15"><i class="fa fa-trash"></i>
-                                            Hapus</button>
-                                    </form>
+                                    <button type="button" data-route="{{Route('admin.pegawai.destroy',$d->id)}}"
+                                        class="btn btn-danger m-l-15 delete" data-toggle="modal"
+                                        data-target="#exampleModal"><i class="fa fa-trash"></i> Hapus
+                                    </button>
                                 </td>
                             </tr>
                             @endforeach
@@ -73,6 +71,7 @@
             </div>
         </div>
     </div>
+    @include('layouts.delete')
 </div>
 <!-- ============================================================== -->
 <!-- End PAge Content -->

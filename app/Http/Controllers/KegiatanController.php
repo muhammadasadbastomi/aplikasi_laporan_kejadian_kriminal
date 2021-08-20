@@ -61,7 +61,7 @@ class KegiatanController extends Controller
      */
     public function show(Kegiatan $kegiatan)
     {
-        //
+        return view('admin.kegiatan.show', compact('kegiatan'));
     }
 
     /**

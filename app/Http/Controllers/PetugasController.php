@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pegawai;
 use App\Models\Petugas;
 use File;
 use Illuminate\Database\QueryException;
@@ -27,7 +28,8 @@ class PetugasController extends Controller
      */
     public function create()
     {
-        return view('admin.petugas.create');
+        $pegawai = Pegawai::all();
+        return view('admin.petugas.create', compact('pegawai'));
     }
 
     /**
@@ -74,8 +76,9 @@ class PetugasController extends Controller
      */
     public function edit(Petugas $petuga)
     {
+        $pegawai = Pegawai::all();
 
-        return view('admin.petugas.edit', compact('petuga'));
+        return view('admin.petugas.edit', compact('petuga', 'pegawai'));
 
     }
 

@@ -137,7 +137,7 @@
                         <td>{{carbon\carbon::parse($d->tanggal_konflik)->translatedFormat('d F Y')}}</td>
                         <td>{{$d->camat->nama}}</td>
                         <td>{{$d->kasi->nama}}</td>
-                        <td>{{$d->petugas->nama_petugas}}</td>
+                        <td>{{$d->petugas->pegawai->nama}}</td>
                         <td>{{$d->desa->nama_desa}}</td>
                         <td>{{$d->deskripsi_konflik}}</td>
                         <td>{{$d->penanganan}}</td>

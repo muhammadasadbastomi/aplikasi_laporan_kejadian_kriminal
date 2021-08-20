@@ -63,7 +63,7 @@ class GangguanController extends Controller
      */
     public function show(Gangguan $gangguan)
     {
-        //
+        return view('admin.gangguan.show', compact('gangguan'));
     }
 
     /**
