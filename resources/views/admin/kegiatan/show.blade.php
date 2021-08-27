@@ -64,7 +64,11 @@
                                 <td>{{carbon\carbon::parse($kegiatan->tanggal_kegiatan)->translatedFormat('d F Y')}}
                                 </td>
                             </tr>
-
+                            <tr>
+                                <td width="20%">Deskripsi Kegiatan</td>
+                                <td width="2px">:</td>
+                                <td>{{$kegiatan->deskripsi_kegiatan}}</td>
+                            </tr>
 
                         </tbody>
                     </table>

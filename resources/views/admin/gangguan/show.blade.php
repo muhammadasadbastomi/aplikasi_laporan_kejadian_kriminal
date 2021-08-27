@@ -65,6 +65,11 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td width="20%">Deskripsi Gangguan</td>
+                                <td width="2px">:</td>
+                                <td>{{$gangguan->deskripsi_gangguan}}</td>
+                            </tr>
+                            <tr>
                                 <td width="20%">Penanganan</td>
                                 <td width="2px">:</td>
                                 <td>{{$gangguan->penanganan}}</td>
