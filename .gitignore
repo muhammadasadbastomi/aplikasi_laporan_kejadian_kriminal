@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/foto
+/public/lampiran
 /storage/*.key
 /vendor
 .env

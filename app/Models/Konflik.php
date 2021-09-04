@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use App\Models\Desa;
+use App\Models\LampiranKonflik;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Konflik extends Model
 {
@@ -28,5 +30,15 @@ class Konflik extends Model
     public function desa(): BelongsTo
     {
         return $this->belongsTo(Desa::class);
+    }
+
+    /**
+     * Get all of the lampiran_konflik for the Konflik
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function lampiran_konflik(): HasMany
+    {
+        return $this->hasMany(LampiranKonflik::class);
     }
 }

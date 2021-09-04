@@ -6,6 +6,7 @@ use App\Models\Camat;
 use App\Models\Desa;
 use App\Models\Kasi;
 use App\Models\Konflik;
+use App\Models\LampiranKonflik;
 use App\Models\Petugas;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -39,6 +40,13 @@ class KonflikController extends Controller
         return view('admin.konflik.create', compact('camat', 'kasi', 'petugas', 'desa'));
     }
 
+    public function createDetail($id)
+    {
+        $konflik = Konflik::FindOrFail($id);
+
+        return view('admin.detail-konflik.create', compact('konflik'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -52,6 +60,25 @@ class KonflikController extends Controller
         Konflik::create($input);
 
         return redirect()->route('admin.konflik.index')->withSuccess('Data berhasil disimpan');
+
+    }
+
+    public function storeDetail(Request $request)
+    {
+        $input = $request->all();
+
+        if (isset($request->lampiran)) {
+            $file = $request->file('lampiran');
+
+            $file_name = time() . "_" . $file->getClientOriginalName();
+
+            $file->move('lampiran', $file_name);
+            $input['lampiran'] = $file_name;
+        }
+
+        LampiranKonflik::create($input);
+
+        return redirect()->route('admin.konflik.show', $request->konflik_id)->withSuccess('Data berhasil disimpan');
 
     }
 

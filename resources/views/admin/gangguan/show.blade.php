@@ -81,6 +81,33 @@
 
                 </div>
             </div>
+
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <a href="{{Route('admin.detail_gangguan.create',$gangguan->id)}}"
+                    class="btn btn-info d-none d-lg-block m-l-15"><i class="fa fa-plus-circle"></i> Tambah
+                    Dokumentasi</a>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive m-t-40">
+                    <table class="table no-footer " role="grid" aria-describedby="myTable_info">
+                        <tbody>
+                            @foreach ($gangguan->lampiran_gangguan as $d)
+                            <tr>
+                                <td width="20%">Foto Dokumentasi {{$loop->iteration}}</td>
+                                <td width="2px">:</td>
+                                <td> <img style="height : 500px !important;" src="{{asset('lampiran/'.$d->lampiran)}}"
+                                        alt=""></td>
+                            </tr>
+                            @endforeach
+
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
             <div class="card-footer text-right">
                 <a href="{{Route('admin.gangguan.index',$gangguan->id)}}" class="btn btn-danger  m-l-15"><i
                         class="fa fa-exit"></i> Kembali

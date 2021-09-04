@@ -54,6 +54,14 @@ Route::middleware(['admin'])->group(function () {
         Route::resource('jadwal', JadwalController::class);
         Route::resource('jabatan', JabatanController::class);
         Route::resource('pegawai', PegawaiController::class);
+        Route::name('detail_gangguan.')->prefix('detail-gangguan')->group(function () {
+            Route::get('/create/{id}', [GangguanController::class, 'createDetail'])->name('create');
+            Route::post('/create/', [GangguanController::class, 'storeDetail'])->name('store');
+        });
+        Route::name('detail_konflik.')->prefix('detail-konflik')->group(function () {
+            Route::get('/create/{id}', [KonflikController::class, 'createDetail'])->name('create');
+            Route::post('/create/', [KonflikController::class, 'storeDetail'])->name('store');
+        });
 
         Route::name('report.')->prefix('laporan')->group(function () {
             Route::get('kegiatan', [ReportController::class, 'kegiatanIndex'])->name('kegiatanIndex');
@@ -91,4 +99,3 @@ Route::middleware(['admin'])->group(function () {
         });
     });
 });
-  

@@ -6,6 +6,7 @@ use App\Models\Camat;
 use App\Models\Desa;
 use App\Models\Gangguan;
 use App\Models\Kasi;
+use App\Models\LampiranGangguan;
 use App\Models\Petugas;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -39,6 +40,13 @@ class GangguanController extends Controller
         return view('admin.gangguan.create', compact('camat', 'kasi', 'petugas', 'desa'));
     }
 
+    public function createDetail($id)
+    {
+        $gangguan = Gangguan::FindOrFail($id);
+
+        return view('admin.detail-gangguan.create', compact('gangguan'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -52,6 +60,25 @@ class GangguanController extends Controller
         Gangguan::create($input);
 
         return redirect()->route('admin.gangguan.index')->withSuccess('Data berhasil disimpan');
+
+    }
+
+    public function storeDetail(Request $request)
+    {
+        $input = $request->all();
+
+        if (isset($request->lampiran)) {
+            $file = $request->file('lampiran');
+
+            $file_name = time() . "_" . $file->getClientOriginalName();
+
+            $file->move('lampiran', $file_name);
+            $input['lampiran'] = $file_name;
+        }
+
+        LampiranGangguan::create($input);
+
+        return redirect()->route('admin.gangguan.show', $request->gangguan_id)->withSuccess('Data berhasil disimpan');
 
     }
 

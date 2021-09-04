@@ -5,9 +5,11 @@ namespace App\Models;
 use App\Models\Camat;
 use App\Models\Desa;
 use App\Models\Kasi;
+use App\Models\LampiranGangguan;
 use App\Models\Petugas;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Gangguan extends Model
 {
@@ -31,5 +33,15 @@ class Gangguan extends Model
     public function desa(): BelongsTo
     {
         return $this->belongsTo(Desa::class);
+    }
+
+    /**
+     * Get all of the lampiran_gangguan for the Gangguan
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function lampiran_gangguan(): HasMany
+    {
+        return $this->hasMany(LampiranGangguan::class);
     }
 }
